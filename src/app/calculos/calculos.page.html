@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resultados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="cargando">
+
+  <ion-item *ngIf="verIMC">
+    <ion-label align="center">IMC: {{imc}}</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="verIMC">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item *ngIf="esbajo">
+            <ion-label>estás</ion-label>
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="tertiary">
+            <ion-input value="Bajo" readonly="true" align="center"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item *ngIf="esnormal">
+            <ion-label>estás</ion-label>
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="success">
+            <ion-input value="Normal" readonly="true" align="center"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item *ngIf="essobrepeso">
+            <ion-label>estás</ion-label>
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="warning">
+            <ion-input value="Sobrepeso" readonly="true" align="center"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item *ngIf="esobesidad">
+            <ion-label>tienes</ion-label>
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item color="danger">
+            <ion-input value="Obesidad" readonly="true" align="center"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="verPesoIdeal">
+    <ion-label align="center">Peso Ideal: {{peso}} Kg.</ion-label>
+  </ion-item>
+
+
+  <ion-item *ngIf="verCalorias">
+    <ion-label align="center">Calorías diarias: {{calorias}} Cal.</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="verIMC">
+    <ion-grid>
+      <ion-row>
+        <ion-label>Nota:</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-textarea color="tertiary" *ngIf="esbajo" readonly="true">Estás bajo tu peso ideal. Trata de consumir alimentos que te
+          aporten nutrientes y
+          energía , además, no olvides desayunar, almorzar y cenar todos los días, así tu cuerpo estará mucho más sano y
+          evitarás enfermedades.</ion-textarea>
+        <ion-textarea color="success" *ngIf="esnormal" readonly="true">Tienes el peso ideal. ¡Felicitaciones! Recuerda que una
+          alimentación equilibrada
+          y la práctica periódica de ejercicio físico te ayudarán a mantener un estado nutricional correcto.
+        </ion-textarea>
+        <ion-textarea color="warning" *ngIf="essobrepeso" readonly="true">Estás por sobre tu peso ideal. Evita los alimentos altos en
+          grasa y azúcar y
+          trata de optar por las verduras y frutas. Además, organiza tu tiempo y dedica, al menos 3 días a la semana,
+          unas horas al ejercicio físico.</ion-textarea>
+        <ion-textarea color="danger" *ngIf="esobesidad" readonly="true">Cuidado, la obesidad genera complicaciones mayores en el
+          organismo y acorta la
+          vida. Es esencial abordar este estado con una dieta balanceada, ejercicio y, en determinadas ocasiones, con
+          cirugía.</ion-textarea>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  
+  <ion-item>
+      <ion-label>¿Te gusta la aplicacion?</ion-label>
+      <ion-toggle [(ngModel)]="evaluar" (ionChange)="evaluarApp()"></ion-toggle>
+    </ion-item>
+
+  <ion-button expand="full" fill="outline" (click)="irATab2()">volver a calcular</ion-button>
+
+</ion-content>

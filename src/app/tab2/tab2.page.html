@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>
+      Indicadores de control
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-toolbar>
+    <ion-title align="center">Salud</ion-title>
+  </ion-toolbar>
+
+  <ion-list>
+    <ion-list-header>Selecciona tu interés</ion-list-header>
+    <ion-item>
+      <ion-label>Masa corporal (IMC)</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="imcchbx"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Peso Ideal</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="pesoIdealchbx"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Calorías</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="caloriaschbx" (ionChange)="verQuemadas(caloriaschbx)"></ion-checkbox>
+    </ion-item>
+
+    <ion-list *ngIf="caloriaschbx">
+      <ion-radio-group [(ngModel)]="grupoCalorias">
+        <ion-list-header>
+          <ion-label>Actividad física</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Soy sedentario</ion-label>
+          <ion-radio slot="start" value="sedentario"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Moderado (1-3 veces x semana)</ion-label>
+          <ion-radio slot="start" value="moderado"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Activo (4-5 veces x semana)</ion-label>
+          <ion-radio slot="start" value="activo"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Todos los días</ion-label>
+          <ion-radio slot="start" value="full"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+  </ion-list>
+
+
+  <ion-toolbar>
+    <ion-title align="center">Ingrese sus datos</ion-title>
+  </ion-toolbar>
+
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Género</ion-label>
+          <ion-select placeholder="Selecione" okText="Seleccionar" cancelText="Cancelar" [(ngModel)]="genero">
+            <ion-select-option value=2>Femenino</ion-select-option>
+            <ion-select-option value=1>Masculino</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label value="15">Edad: {{valorEdad}} años</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-range min="15" max="100" step="1" snaps="true" ticks="false" color="secondary" [(ngModel)]="valorEdad">
+          </ion-range>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Peso: {{valorPeso}} Kg.</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-range min="30" max="120" step="1" snaps="true" ticks="false" color="secondary" [(ngModel)]="valorPeso">
+          </ion-range>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Altura: {{valorEstatura}} cm.</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-range min="100" max="220" step="1" snaps="true" ticks="false" color="secondary" [(ngModel)]="valorEstatura"></ion-range>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-button expand="block" fill="outline"
+    (click)="calcular(imcchbx, pesoIdealchbx, caloriaschbx, grupoCalorias, valorEdad, valorPeso, valorEstatura, genero)">Enviar
+    <ion-icon slot="icon-only" name="send"></ion-icon>
+  </ion-button>
+
+</ion-content>

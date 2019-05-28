@@ -2,15 +2,15 @@
   <ion-toolbar color="success">
     <ion-title align="center">Salud Integral</ion-title>
     
-    <ion-button (click)="irATab1()" color="success">
+    <ion-button (click)="irA('tab1')" color="success">
       <ion-icon slot="icon-only" name="home"></ion-icon>
     </ion-button>
 
-    <ion-button (click)="irATab2()" color="success">
+    <ion-button (click)="irA('tab2')" color="success">
       <ion-icon slot="icon-only" name="pulse"></ion-icon>
     </ion-button>
 
-    <ion-button (click)="acercaDe()" color="success">
+    <ion-button (click)="irA('tab3')" color="success">
       <ion-icon slot="icon-only" name="contacts"></ion-icon>
     </ion-button>
   </ion-toolbar>
@@ -36,7 +36,7 @@
     <ion-item>
       <ion-img src="/assets/img/nutricion1.jpg"></ion-img>
     </ion-item>
-    <ion-button expand="block" fill="outline" (click)="irATab2()">Contrólate
+    <ion-button expand="block" fill="outline" (click)="irA('tab2')">Contrólate
       <ion-icon slot="icon-only" name="pulse"></ion-icon>
     </ion-button>
   </ion-list>

@@ -65,16 +65,8 @@ export class CalculosPage implements OnInit {
     this.alerta('¿Nos autorizas a recopilar estos datos?');
   }
 
-  irATab2() {
-    this.navController.navigateBack('tab2');
-  }
-
-  irATab1() {
-    this.navController.navigateBack('tab1');
-  }
-
-  acercaDe() {
-    this.navController.navigateBack('tab3');
+  irA(mensaje){
+    this.navController.navigateForward(mensaje);
   }
 
   evaluarIMC(imc: any) {

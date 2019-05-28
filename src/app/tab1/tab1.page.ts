@@ -8,7 +8,9 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  constructor(public navController: NavController) { }
+  constructor(
+    public navController: NavController
+    ) { }
   
   irA(mensaje){
     this.navController.navigateForward(mensaje);

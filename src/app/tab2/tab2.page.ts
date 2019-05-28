@@ -20,10 +20,21 @@ export class Tab2Page {
   loading: any;
   ok: boolean = false;
 
+  imcchbx: boolean = false;
+  pesoIdealchbx: boolean = false;
+
   constructor(
     public navController: NavController,
     public toastController: ToastController,
     public loadingController: LoadingController) {
+
+      this.imcchbx = false;
+      this.pesoIdealchbx = false;
+      this.caloriaschbx = false;
+      this.valorPeso = 30;
+      this.valorEstatura = 100;
+      this.valorEdad = 15;
+
   }
 
   irACalculos() {

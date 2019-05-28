@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
-import { when } from 'q';
 
 @Component({
   selector: 'app-tab2',
@@ -32,16 +31,8 @@ export class Tab2Page {
     this.navController.navigateForward(`/calculos/${this.valorCalorias}/${this.valorPesoIdeal}/${this.valorIMC}`);
   }
 
-  irATab1() {
-    this.navController.navigateBack('tab1');
-  }
-
-  acercaDe() {
-    this.navController.navigateBack('tab3');
-  }
-
-  irATab2(){
-    this.navController.navigateForward('tab2');
+  irA(mensaje){
+    this.navController.navigateForward(mensaje);
   }
 
   calcular(imc: boolean, pesoIdeal: boolean, caloriaschbx: boolean, grupoCalorias: string, edad: any, valorPeso: any, estatura: any, genero: any) {

@@ -1,19 +1,30 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-title align="center">Resultados</ion-title>
-
-    <ion-button (click)="irA('tab1')" color="success">
-      <ion-icon slot="icon-only" name="home"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="irA('tab2')" color="success">
-      <ion-icon slot="icon-only" name="pulse"></ion-icon>
-    </ion-button>
-
-    <ion-button (click)="irA('tab3')" color="success">
-      <ion-icon slot="icon-only" name="contacts"></ion-icon>
-    </ion-button>
-
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-title align="center">Resultados</ion-title>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="irA('tab1')" color="success">
+                <ion-icon slot="icon-only" name="home"></ion-icon>
+              </ion-button>
+            </ion-col>
+    
+            <ion-col>
+              <ion-button (click)="irA('tab2')" color="success">
+                <ion-icon slot="icon-only" name="pulse"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="irA('tab3')" color="success">
+                <ion-icon slot="icon-only" name="contacts"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
   </ion-toolbar>
 
 </ion-header>
@@ -21,7 +32,13 @@
 <ion-content *ngIf="cargando">
 
   <ion-item *ngIf="verIMC">
-    <ion-label align="center" color="dark">IMC: {{imc}}</ion-label>
+    <ion-grid>
+      <ion-col>
+          <ion-label align="center" color="success"><ion-icon name="body" color="dark"></ion-icon>
+            Índice de masa corporal: {{imc}}</ion-label>
+      </ion-col>
+    </ion-grid>
+     
   </ion-item>
 
   <ion-item *ngIf="verIMC">
@@ -86,20 +103,31 @@
   </ion-item>
 
   <ion-item *ngIf="verPesoIdeal">
-    <ion-label align="center" color="success">Peso Ideal: {{peso}} Kg.</ion-label>
+    <ion-label align="center" color="success"><ion-icon name="man" color="dark"></ion-icon>
+      Peso Ideal: {{peso}} Kg.</ion-label>
   </ion-item>
 
 
   <ion-item *ngIf="verCalorias">
-    <ion-label align="center" color="dark">Calorías diarias: {{calorias}} Cal.</ion-label>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label align="center" color="success"><ion-icon name="battery-full" color="dark"></ion-icon>
+            Calorías diarias a gastar: {{calorias}} Cal.</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-item>
 
   <ion-item *ngIf="verIMC" color="light">
     <ion-grid>
       <ion-row>
-        <ion-label color="dark">Nota:</ion-label>
+        <ion-col>
+        <ion-label color="medium">Nota:</ion-label>
+        </ion-col>
       </ion-row>
       <ion-row>
+        <ion-col>
         <ion-textarea color="tertiary" *ngIf="esbajo" readonly="true">Estás bajo tu peso ideal. Trata de consumir
           alimentos que te
           aporten nutrientes y
@@ -120,6 +148,7 @@
           organismo y acorta la
           vida. Es esencial abordar este estado con una dieta balanceada, ejercicio y, en determinadas ocasiones, con
           cirugía.</ion-textarea>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </ion-item>
@@ -130,6 +159,9 @@
     <ion-toggle [(ngModel)]='evaluar' (ionChange)="evaluarApp(evaluar)"></ion-toggle>
   </ion-item>
 
-  <ion-button expand="full" fill="outline" (click)="irA('tab2')">volver a calcular</ion-button>
+  <ion-button expand="full" fill="outline" (click)="irA('tab2')">
+      <ion-icon name="undo"></ion-icon>
+    volver a calcular</ion-button>
 
 </ion-content>
+

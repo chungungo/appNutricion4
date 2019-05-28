@@ -31,9 +31,6 @@ export class Tab2Page {
       this.imcchbx = false;
       this.pesoIdealchbx = false;
       this.caloriaschbx = false;
-      this.valorPeso = 30;
-      this.valorEstatura = 100;
-      this.valorEdad = 15;
 
   }
 

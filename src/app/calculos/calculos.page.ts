@@ -22,7 +22,9 @@ export class CalculosPage implements OnInit {
   ) {
     setTimeout(() => {
       this.cargando = true;
-    }, 1500);
+      this.alerta('¿Nos autorizas a recopilar estos datos?');
+    }, 1900);
+
   }
 
   peso: any;
@@ -61,11 +63,9 @@ export class CalculosPage implements OnInit {
     } else {
       this.verPesoIdeal = false;
     }
-
-    this.alerta('¿Nos autorizas a recopilar estos datos?');
   }
 
-  irA(mensaje){
+  irA(mensaje) {
     this.navController.navigateForward(mensaje);
   }
 
@@ -93,7 +93,9 @@ export class CalculosPage implements OnInit {
         {
           text: 'Aceptar',
           handler: (dato) => {
-            this.verMsg('Gracias. Tus datos son confidenciales');
+            setTimeout(() => {
+              this.verMsg('Gracias. Tus datos son confidenciales');
+            }, 900);
           }
         },
         {
@@ -113,9 +115,9 @@ export class CalculosPage implements OnInit {
     evento.present();
   }
 
-  evaluarApp(){
-    if(this.evaluar){
-        this.ponerNota();
+  evaluarApp() {
+    if (this.evaluar) {
+      this.ponerNota();
     }
   }
 
@@ -129,7 +131,9 @@ export class CalculosPage implements OnInit {
             icon: 'star',
             handler: () => {
               console.log('1 estrella');
-              this.verMsg('Gracias por evaluar');
+              setTimeout(() => {
+                this.verMsg('Gracias por evaluar');
+              }, 1000);
             }
           },
           {
@@ -137,7 +141,9 @@ export class CalculosPage implements OnInit {
             icon: 'star',
             handler: () => {
               console.log('2 estrellas');
-              this.verMsg('Gracias por evaluar');
+              setTimeout(() => {
+                this.verMsg('Gracias por evaluar');
+              }, 1000);
             }
           },
           {
@@ -145,7 +151,9 @@ export class CalculosPage implements OnInit {
             icon: 'star',
             handler: () => {
               console.log('3 estrellas');
-              this.verMsg('Gracias por evaluar');
+              setTimeout(() => {
+                this.verMsg('Gracias por evaluar');
+              }, 1000);
             }
           },
           {
@@ -153,7 +161,9 @@ export class CalculosPage implements OnInit {
             icon: 'star',
             handler: () => {
               console.log('4 estrellas');
-              this.verMsg('Gracias por evaluar');
+              setTimeout(() => {
+                this.verMsg('Gracias por evaluar');
+              }, 1000);
             }
           },
           {
@@ -161,7 +171,9 @@ export class CalculosPage implements OnInit {
             icon: 'star',
             handler: () => {
               console.log('5 estrellas');
-              this.verMsg('Gracias por evaluar');
+              setTimeout(() => {
+                this.verMsg('Gracias por evaluar');
+              }, 1000);
             }
           }
         ]

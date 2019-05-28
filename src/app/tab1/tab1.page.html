@@ -1,36 +1,43 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-title>
-      Salud Integral
-    </ion-title>
+    <ion-title align="center">Salud Integral</ion-title>
+    
+    <ion-button (click)="irATab1()" color="success">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="irATab2()" color="success">
+      <ion-icon slot="icon-only" name="pulse"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="acercaDe()" color="success">
+      <ion-icon slot="icon-only" name="contacts"></ion-icon>
+    </ion-button>
   </ion-toolbar>
+
+  <ion-item>
+    <ion-img src="/assets/img/portada.jpg"></ion-img>
+  </ion-item>
 </ion-header>
 
 <ion-content>
-
   <ion-item>
-      <ion-img src="/assets/img/portada.jpg"></ion-img>
+    <ion-label color="success" align="center">Sobrepeso y la Obesidad</ion-label>
   </ion-item>
 
   <ion-list lines="none">
-    <ion-list-header>
-      <ion-label>Asistente para controlar tu peso</ion-label>
-    </ion-list-header>
     <ion-item>
-      <ion-icon></ion-icon>
-      <ion-label>Ionic Documentation</ion-label>
-    </ion-item>
-    <ion-item >
-      <ion-icon slot="start" color="medium" name="build"></ion-icon>
-      <ion-label>Contrólate</ion-label>
+      <ion-textarea readonly="true" color="dark">El sobrepeso y la obesidad se definen como una acumulación
+        anormal o excesiva de grasa que puede ser perjudicial para la salud.
+        El índice de masa corporal (IMC) es un indicador simple de la relación
+        entre el peso y la talla que se utiliza frecuentemente para identificar
+        el sobrepeso y la obesidad en los adultos.</ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-      <ion-label>Change Your App Layout</ion-label>
+      <ion-img src="/assets/img/nutricion1.jpg"></ion-img>
     </ion-item>
-    <ion-item>
-      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-      <ion-label>Theme Your App</ion-label>
-    </ion-item>
+    <ion-button expand="block" fill="outline" (click)="irATab2()">Contrólate
+      <ion-icon slot="icon-only" name="pulse"></ion-icon>
+    </ion-button>
   </ion-list>
 </ion-content>

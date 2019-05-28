@@ -1,17 +1,23 @@
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Acerca de Nosotros
-    </ion-title>
+  <ion-toolbar color="success">
+    <ion-title align="center">Acerca de Nosotros</ion-title>
+    <ion-button (click)="irATab1()" color="success">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="irATab2()" color="success">
+      <ion-icon slot="icon-only" name="pulse"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="acercaDe()" color="success">
+      <ion-icon slot="icon-only" name="contacts"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card class="welcome-card">
-    <ion-img src="/assets/img/chungungo.png"></ion-img>
+    <ion-img src="/assets/img/nosotros2.jpg"></ion-img>
     <ion-card-header>
       <ion-card-subtitle>Equipo</ion-card-subtitle>
       <ion-card-title>PappAS</ion-card-title>

@@ -4,5 +4,5 @@ En la actualidad, nuestro país enfrenta nuevos problemas relacionados con las a
 Debido a este problema nos vimos en la obligación de crear una aplicación que nos ayudara a medir el índice de masa corporal (IMC), indicar peso ideal y calorías necesarias.
 La idea principal de esta aplicación es contribuir a evitar la obesidad  y fomentar la vida y alimentación sana.
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![](https://github.com/chungungo/appNutricion4/blob/master/Captura.PNG)
 :running:

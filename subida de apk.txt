@@ -1,0 +1,2 @@
+subida de apk 
+ionic cordova buid android

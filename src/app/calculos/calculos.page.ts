@@ -69,6 +69,14 @@ export class CalculosPage implements OnInit {
     this.navController.navigateBack('tab2');
   }
 
+  irATab1() {
+    this.navController.navigateBack('tab1');
+  }
+
+  acercaDe() {
+    this.navController.navigateBack('tab3');
+  }
+
   evaluarIMC(imc: any) {
     if (imc < 18.5) {
       this.esbajo = true;

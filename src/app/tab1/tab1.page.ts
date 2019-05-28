@@ -10,8 +10,16 @@ export class Tab1Page {
 
   constructor(public navController: NavController) { }
 
-  irA() {
-    this.navController.navigateForward('');
+  irATab2(){
+    this.navController.navigateForward('tab2');
+  }
+
+  irATab1() {
+    this.navController.navigateBack('tab1');
+  }
+
+  acercaDe() {
+    this.navController.navigateBack('tab3');
   }
 
 }

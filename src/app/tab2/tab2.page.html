@@ -1,19 +1,26 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-title>
-      Indicadores de control
-    </ion-title>
+    <ion-title align="center">Indicadores de control</ion-title>
+    <ion-button (click)="irATab1()" color="success">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="irATab2()" color="success">
+      <ion-icon slot="icon-only" name="pulse"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="acercaDe()" color="success">
+      <ion-icon slot="icon-only" name="contacts"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-toolbar>
-    <ion-title align="center">Salud</ion-title>
+  <ion-toolbar color="light">
+    <ion-title align="center">Seleccione</ion-title>
   </ion-toolbar>
 
   <ion-list>
-    <ion-list-header>Selecciona tu interés</ion-list-header>
     <ion-item>
       <ion-label>Masa corporal (IMC)</ion-label>
       <ion-checkbox slot="start" [(ngModel)]="imcchbx"></ion-checkbox>
@@ -59,7 +66,7 @@
   </ion-list>
 
 
-  <ion-toolbar>
+  <ion-toolbar color="light">
     <ion-title align="center">Ingrese sus datos</ion-title>
   </ion-toolbar>
 
@@ -71,6 +78,9 @@
         <ion-item>
           <ion-label position="floating">Género</ion-label>
           <ion-select placeholder="Selecione" okText="Seleccionar" cancelText="Cancelar" [(ngModel)]="genero">
+            <ion-label>
+              <ion-icon name="male"></ion-icon>
+            </ion-label>
             <ion-select-option value=2>Femenino</ion-select-option>
             <ion-select-option value=1>Masculino</ion-select-option>
           </ion-select>
@@ -108,7 +118,8 @@
           <ion-label>Altura: {{valorEstatura}} cm.</ion-label>
         </ion-item>
         <ion-item>
-          <ion-range min="100" max="220" step="1" snaps="true" ticks="false" color="secondary" [(ngModel)]="valorEstatura"></ion-range>
+          <ion-range min="100" max="220" step="1" snaps="true" ticks="false" color="secondary"
+            [(ngModel)]="valorEstatura"></ion-range>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -116,7 +127,8 @@
   </ion-grid>
 
   <ion-button expand="block" fill="outline"
-    (click)="calcular(imcchbx, pesoIdealchbx, caloriaschbx, grupoCalorias, valorEdad, valorPeso, valorEstatura, genero)">Enviar
+    (click)="calcular(imcchbx, pesoIdealchbx, caloriaschbx, grupoCalorias, valorEdad, valorPeso, valorEstatura, genero)">
+    Enviar
     <ion-icon slot="icon-only" name="send"></ion-icon>
   </ion-button>
 

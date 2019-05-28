@@ -32,6 +32,18 @@ export class Tab2Page {
     this.navController.navigateForward(`/calculos/${this.valorCalorias}/${this.valorPesoIdeal}/${this.valorIMC}`);
   }
 
+  irATab1() {
+    this.navController.navigateBack('tab1');
+  }
+
+  acercaDe() {
+    this.navController.navigateBack('tab3');
+  }
+
+  irATab2(){
+    this.navController.navigateForward('tab2');
+  }
+
   calcular(imc: boolean, pesoIdeal: boolean, caloriaschbx: boolean, grupoCalorias: string, edad: any, valorPeso: any, estatura: any, genero: any) {
     edad = parseInt(edad);
     valorPeso = parseInt(valorPeso);

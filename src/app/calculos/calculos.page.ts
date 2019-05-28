@@ -31,7 +31,7 @@ export class CalculosPage implements OnInit {
   esbajo: boolean = false;
   esnormal: boolean = false;
   essobrepeso: boolean = false;
-  esobesidad: boolean = false;
+  esobesidad:  boolean = false;
   verCalorias: boolean = false;
   verIMC: boolean = false;
   verPesoIdeal: boolean = false;
@@ -59,7 +59,7 @@ export class CalculosPage implements OnInit {
     if (this.peso > 0) {
       this.verPesoIdeal = true;
     } else {
-      this.verPesoIdeal = false;
+      this.verPesoIdeal =  false;
     }
 
     this.alerta('¿Nos autorizas a recopilar estos datos?');

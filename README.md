@@ -5,3 +5,4 @@ Debido a este problema nos vimos en la obligación de crear una aplicación que 
 La idea principal de esta aplicación es contribuir a evitar la obesidad  y fomentar la vida y alimentación sana.
 
 ![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+:running:

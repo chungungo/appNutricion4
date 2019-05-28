@@ -46,7 +46,7 @@ export class CalculosPage implements OnInit {
     this.imc = parseFloat(this.activateRoute.snapshot.paramMap.get('valorIMC')).toFixed(2);
 
     if (this.imc > 0) {
-      this.verIMC = true;
+      this. verIMC = true;
       this.evaluarIMC(this.imc);
     } else {
       this.verIMC = false;
@@ -112,7 +112,7 @@ export class CalculosPage implements OnInit {
       duration: 2000,
       position: 'bottom'
     });
-    evento.present();
+      evento.present();
   }
 
   evaluarApp() {
